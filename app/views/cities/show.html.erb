@@ -1,0 +1,3 @@
+<% @city.posts.each do |post| %>
+	<li><%= link_to post.tagline, city_post_path(post, @city) %></li>
+<% end %>
