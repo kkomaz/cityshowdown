@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   resources :cities, :only => [:index, :show] do
-    resources :posts, :only => [:show] do
+    resources :posts do
       resources :comments
     end
   end
