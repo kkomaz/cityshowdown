@@ -1,7 +1,18 @@
-<h3><%= @post.tagline %></h3>
-<%= @post.description if @post.description  %>
-<%= image_tag @post.image.url(:medium) if @post.image %>
+<div class="col-md-8 col-md-offset-2">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <h1><%= @post.tagline %></h1>
+      <h3><%= @post.description if @post.description  %></h3>
+      <%= image_tag @post.image.url(:medium) if @post.image %>
+    </div>
+    <div class="panel-footer">
+      <ul>
+          <li><%= link_to 'Edit Post', edit_city_post_path(@post.city, @post)%></li>
+          <li><%= link_to 'Delete Post', city_post_path(@post.city, @post), method: :delete, :data => {:confirm => "Are you sure?"}%></li>
+          <li><%= link_to 'Back', city_path(@post.city) %></li>
+      </ul>
+    </div>
+  </div>
+</div>
 
-<%= link_to 'Edit Post', edit_city_post_path(@post.city, @post)%>
-<%= link_to 'Delete Post', city_post_path(@post.city, @post), method: :delete, :data => {:confirm => "Are you sure?"}%>
-<%= link_to 'Back', city_path(@post.city) %>
+
