@@ -1,3 +1,3 @@
 <h3><%= @post.tagline %></h3>
 <%= @post.description if @post.description  %>
-<%= @post.image if @post.image %>
+<%= image_tag @post.image.url(:medium) if @post.image %>
