@@ -1,3 +1,7 @@
 <h3><%= @post.tagline %></h3>
 <%= @post.description if @post.description  %>
 <%= image_tag @post.image.url(:medium) if @post.image %>
+
+<%= link_to 'Edit Post', edit_city_post_path(@post.city, @post)%>
+<%= link_to 'Delete Post', city_post_path(@post.city, @post), method: :delete, :data => {:confirm => "Are you sure?"}%>
+<%= link_to 'Back', city_path(@post.city) %>
