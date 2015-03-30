@@ -4,5 +4,6 @@
 	<li><%= link_to post.tagline, city_post_path(@city, post) %></li>
 <% end %>
 
-<%= link_to 'Write a new post', new_city_post_path(@city) %>
+<%= link_to 'Write a new post', new_city_post_path(@city) %> <br>
+<%= link_to 'Back', root_path %>
 
