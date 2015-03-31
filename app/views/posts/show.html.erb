@@ -9,6 +9,7 @@
         <h1><%= @post.tagline %></h1>
         <h3><%= @post.description if @post.description  %></h3>
         <p>Category: <%= @post.category.name if @post.category %></p>
+        <p class="pro"><%= "PRO " + @city.name if @post.pro_or_con == 1 %><p class="con"><%= "CON for " + @city.name if @post.pro_or_con == 0 %>
         <h4>Comments</h4>
           <% @post.comments.each do |comment| %>
             <p>
