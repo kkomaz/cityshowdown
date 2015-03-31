@@ -3,6 +3,8 @@ class PostsController < ApplicationController
   before_action :find_post, :only => [:edit, :update, :destroy, :show]
 
   def show
+    @city = City.find(params[:city_id])
+    @comment = Comment.new
   end
 
   def new
