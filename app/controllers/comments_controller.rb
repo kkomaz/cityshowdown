@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
     @city = City.find(params[:city_id])
     @post = Post.find(params[:post_id])
     @comment = @post.comments.build(comment_params)
-    # @comment.user = current_user
+    @comment.user = current_user
     @comment.save
     redirect_to city_post_path(@city, @post)
   end
