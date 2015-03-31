@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
   before_action :find_user, :only => [:show]
+
+  def new
+
+  end
   
   def show
   end
@@ -8,4 +12,9 @@ class UsersController < ApplicationController
   def find_user
     @user = User.find(params[:id])
   end
+
+  def set_api
+    @photos = FacebookPhoto.new(current_user)
+  end
+
 end
