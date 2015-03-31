@@ -15,9 +15,11 @@ User.create(name: "Becca Shapiro", password: "test", email: "rshapiro3@gmail.com
 User.create(name: "Alex Lee", password: "test", email: "alexlee@gmail.com", username: "alee", city_id: 2)
 User.create(name: "Chloe Lee", password: "test", email: "chloelee@gmail.com", username: "clee", city_id: 3)
 
-Post.create(tagline: 'This city', description: "Is the best!", city_id: 1, user_id: 1)
-Post.create(tagline: 'No, MY city', description: "Is the best!", city_id: 2, user_id: 2)
-Post.create(tagline: 'Nah guys', description: "mine is totally the best!", city_id: 3, user_id: 3)
+categories = ['Food', 'Nightlife', 'Style', 'History', "Art", "Sports", 'Architecture', "Other"]
+
+Post.create(tagline: 'This city', description: "Is the best!", city_id: 1, user_id: 1, category_id: 1)
+Post.create(tagline: 'No, MY city', description: "Is the best!", city_id: 2, user_id: 2, category_id: 2)
+Post.create(tagline: 'Nah guys', description: "mine is totally the best!", city_id: 3, user_id: 3, category_id: 3)
 
 Comment.create(content: "ok, whatever" , user_id: 1, post_id: 2)
 Comment.create(content: "ok, whatever" , user_id: 2, post_id: 3)
