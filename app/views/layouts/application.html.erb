@@ -8,7 +8,23 @@
   <%= analytics_init if Rails.env.production? %>
 </head>
 <body>
-<div class="container">
+<nav class="navbar navbar-default">
+  <div class="container">
+      <div class="navbar-brand">
+        <%= link_to "CityStories", root_path  %>
+      </div>        
+      <% if logged_in? %>
+        <ul class="nav navbar-nav navbar-right">
+            <li class="welcome_sign">Welcome <strong><%= current_user.name %></strong>!</li>
+            <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
+        </ul>
+      <% else %>
+        <ul class="nav navbar-nav navbar-right welcome_sign">
+          <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+        </ul>
+      <% end %>
+  </div>
+</nav>
 <%= yield %>
 </div>
 </body>
