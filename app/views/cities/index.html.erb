@@ -1,5 +1,8 @@
 <h1>Pick your city!</h1>
 
 <% @cities.each do |city| %>
-	<%= link_to city.name, city %>
+	<div>
+		<p><%= link_to image_tag(city.image, width: "200"), city %></p>
+		<p><%= link_to city.name, city %></p>
+	</div>
 <% end %>

@@ -1,0 +1,9 @@
+<h1><%= @city.name %></h1>
+<h2>All posts in category "<%= @category.name %>"</h2>
+
+<% @city.posts.each do |post| %>
+	<li><%= link_to post.tagline, city_post_path(@city, post) %></li>
+<% end %>
+
+<%= link_to 'Write a new post', new_city_post_path(@city) %> <br>
+<%= link_to 'Back', city_path(@city) %>

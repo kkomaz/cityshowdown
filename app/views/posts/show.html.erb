@@ -6,7 +6,8 @@
       </div>
       <div class="panel-body">
         <h1><%= @post.tagline %></h1>
-        <h3><%= @post.description if @post.description  %></h3>  
+        <h3><%= @post.description if @post.description  %></h3>
+        <p>Category: <%= @post.category.name if @post.category %></p>
       </div>
       <div class="panel-footer">
         <ul>

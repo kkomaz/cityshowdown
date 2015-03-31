@@ -8,14 +8,25 @@
 
 
 
-cities = ["New York", "Austin", "Los Angeles", "Chicago", "San Francisco", "Boston", "Seattle", "Portland"]
-cities.each {|city| City.create(name: city)}
+cities = { 
+  "New York": "https://hausmanllc.files.wordpress.com/2013/06/statue-of-liberty-in-new-york-city-united-states.jpg",
+  "Seattle": "https://citizenfable.files.wordpress.com/2012/11/seattle-skyline-picture.jpeg",
+  "Chicago": "http://www.marriott.com/Images/MiniStores/Header_Images/Destinations/en/Chicago_hotels_skyline_fireworks.jpg",
+  "Boston": "http://www.massvacation.com/wp-content/uploads/2013/06/1_Boston__0000_iStock_000011012295Large.jpg",
+  "Austin": "http://centraltexasmurals.com/wp-content/uploads/2011/01/good-morning-austin-jpg-copy.jpg",
+  "Los Angeles": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT18uyZ9e35V4VsANzZeyXtUCPgQ3j4DRlsBLEEkCLB9mVzCB5P",
+  "San Francisco": "http://www.sanfrancisco.travel/sites/sftraveldev.prod.acquia-sites.com/files/SanFrancisco_0.jpg",
+  "Washington D.C.": "http://images.boomsbeat.com/data/images/full/4684/1-jpg.jpg",
+  "Portland": "https://waldobungie.files.wordpress.com/2011/06/dsc_0189.jpg"
+}
+cities.each {|city, image| City.create(name: city, image: image)}
 
 User.create(name: "Becca Shapiro", password: "test", email: "rshapiro3@gmail.com", username: "bshap27", city_id: 1)
 User.create(name: "Alex Lee", password: "test", email: "alexlee@gmail.com", username: "alee", city_id: 2)
 User.create(name: "Chloe Lee", password: "test", email: "chloelee@gmail.com", username: "clee", city_id: 3)
 
 categories = ['Food', 'Nightlife', 'Style', 'History', "Art", "Sports", 'Architecture', "Other"]
+categories.each {|category| Category.create(name: category)}
 
 Post.create(tagline: 'This city', description: "Is the best!", city_id: 1, user_id: 1, category_id: 1)
 Post.create(tagline: 'No, MY city', description: "Is the best!", city_id: 2, user_id: 2, category_id: 2)
@@ -24,3 +35,4 @@ Post.create(tagline: 'Nah guys', description: "mine is totally the best!", city_
 Comment.create(content: "ok, whatever" , user_id: 1, post_id: 2)
 Comment.create(content: "ok, whatever" , user_id: 2, post_id: 3)
 Comment.create(content: "ok, whatever" , user_id: 3, post_id: 1)
+
