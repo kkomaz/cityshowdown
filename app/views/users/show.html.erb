@@ -1,1 +1,14 @@
-<p>catch me</p>
+<div class="col-md-5 col-md-offset-2">
+<h3>All Posts by <%= @user.name %></h3>
+<% @user.posts.each do |post| %>
+  <%= post.tagline  %>
+<% end %>  
+<h3>All Comments by <%= @user.name %></h3>
+<%# @user.comments.each do |comment| %>
+  <%#= comment.content %>
+<%# end %>
+
+<h3>Current City</h3>
+<h4><%= @user.location %></h4>
+</div>
+

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150331025710) do
+ActiveRecord::Schema.define(version: 20150331153728) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -57,6 +57,9 @@ ActiveRecord::Schema.define(version: 20150331025710) do
     t.string   "uid"
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
+    t.string   "image"
+    t.string   "link"
+    t.string   "location"
   end
 
 end
