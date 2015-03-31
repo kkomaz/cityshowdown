@@ -8,6 +8,7 @@ class PostsController < ApplicationController
   end
 
   def new
+    # binding.pry
     @post = Post.new
     @city = City.find(params[:city_id])
   end
@@ -17,13 +18,13 @@ class PostsController < ApplicationController
   end
 
   def create
-    binding.pry
     @post = current_user.posts.build(post_params)
     @post.city_id = params[:city_id]
     if @post.save
       redirect_to city_path(@post.city)
     else
-      render 'new'
+      # render 'new' #this breaks. the form action is city/:id/posts/, and that's not actually a valid view. so if the post fils to save, you're stuck at this URL and just trying to render new.html.erb from that URL. 
+      redirect_to new_city_post_path(params[:city_id]) #this redirects but doesn't save prior inputs
     end
   end
 
