@@ -17,6 +17,7 @@ class PostsController < ApplicationController
   end
 
   def create
+    binding.pry
     @post = current_user.posts.build(post_params)
     @post.city_id = params[:city_id]
     if @post.save
@@ -43,7 +44,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:tagline, :description, :image)  
+    params.require(:post).permit(:tagline, :description, :image, :category_id)  
   end
 
   def find_post
