@@ -11,10 +11,9 @@
         <p>Category: <%= @post.category.name if @post.category %></p>
         <h4>Comments</h4>
           <% @post.comments.each do |comment| %>
-            <p>
-              <%= comment.content %> 
-              <%= comment.user %>
-              <%= link_to 'Delete Comment', city_post_comment_path(@city, @post, comment), method: :delete, :data => {:confirm => "Are you sure?"}%>
+            <p><b><%= comment.user.name %> says </b>
+            <%= comment.content %> 
+                <%= link_to 'Delete Comment', city_post_comment_path(@city, @post, comment), method: :delete, :data => {:confirm => "Are you sure?"} if current_user == comment.user%>
             </p>
           <% end %>
 
@@ -22,13 +21,8 @@
         <%= render 'comment_form' %>
       </div>
       
-      <div class="panel-footer">
-        <ul>
-            <li><%= link_to 'Edit Post', edit_city_post_path(@post.city, @post)%></li>
-            <li><%= link_to 'Delete Post', city_post_path(@post.city, @post), method: :delete, :data => {:confirm => "Are you sure?"}%></li>
-            <li><%= link_to 'Back', city_path(@post.city) %></li>
-        </ul>
-      </div>
+      <%= link_to 'Back', city_path(@post.city) %>
+      <%= render 'footer' if current_user == Post.find(params[:id]).user %>
     </div>
   </div>
 </div>

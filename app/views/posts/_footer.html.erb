@@ -1,0 +1,6 @@
+<div class="panel-footer">
+  <ul>
+    <li><%= link_to 'Edit Post', edit_city_post_path(@post.city, @post)%></li>
+    <li><%= link_to 'Delete Post', city_post_path(@post.city, @post), method: :delete, :data => {:confirm => "Are you sure?"}%></li>
+  </ul>
+</div>
