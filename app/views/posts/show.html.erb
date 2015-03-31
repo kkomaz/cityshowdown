@@ -13,7 +13,7 @@
           <% @post.comments.each do |comment| %>
             <p>
               <%= comment.content %> 
-              <%= comment.user %>
+              <%= comment.user.name if comment.user %>
               <%= link_to 'Delete Comment', city_post_comment_path(@city, @post, comment), method: :delete, :data => {:confirm => "Are you sure?"}%>
             </p>
           <% end %>
