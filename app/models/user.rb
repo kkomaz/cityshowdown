@@ -17,6 +17,7 @@ class User < ActiveRecord::Base
   end
 
   def self.set_user(auth)
+    binding.pry
     User.find_by_provider_and_uid(auth["provider"], auth["uid"]) || User.from_omniauth(auth)
   end
 
