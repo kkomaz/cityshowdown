@@ -1,9 +1,33 @@
 <h1><%= @city.name %></h1>
 <h2>All posts in category "<%= @category.name %>"</h2>
 
-<% @city.posts.each do |post| %>
-	<li><%= link_to post.tagline, city_post_path(@city, post) %></li>
-<% end %>
+<center><h1><%= @city.name %></h1></center>
 
-<%= link_to 'Write a new post', new_city_post_path(@city) %> <br>
-<%= link_to 'Back', city_path(@city) %>
+<div class='categories'>| <%= link_to "All", city_path(@city) %>
+|<% @categories.each do |c| %>
+	<%= link_to c.name, city_category_path(@city, c) %> |
+<% end %>
+</div>
+
+<div id="posts">
+  <div id="posts-pro">
+  <h3>Pros:</h3>
+    <% @posts.where(:posts => {:pro_or_con => 1}).each do |post| %>
+      <%= render 'cities/show_posts', :post => post %>
+    <% end %>
+  </div>
+
+  <div id="posts-con">
+  <h3>Cons:</h3>
+    <% @posts.where(:posts => {:pro_or_con => 0}).each do |post| %>
+      <%= render 'cities/show_posts', :post => post %>
+    <% end %>
+  </div>
+
+  <% if logged_in? %>
+  <%= link_to 'Write a new post', new_city_post_path(@city) %> <br>
+  <%= link_to 'Back', root_path %>
+  <% else %>
+  <%= link_to 'Back', root_path %>
+  <% end %>
+</div>
