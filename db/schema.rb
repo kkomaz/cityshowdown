@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20150331181845) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.integer  "category_id"
+    t.integer  "pro_or_con"
   end
 
   create_table "users", force: :cascade do |t|
@@ -57,6 +58,9 @@ ActiveRecord::Schema.define(version: 20150331181845) do
     t.string   "uid"
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
+    t.string   "image"
+    t.string   "link"
+    t.string   "location"
   end
 
   create_table "votes", force: :cascade do |t|
