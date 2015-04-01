@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
 
   before_action :find_post, :only => [:edit, :update, :destroy, :show]
+  before_action :set_api, :only => [:edit, :new]
 
   def show
     @city = City.find(params[:city_id])
@@ -10,7 +11,6 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
     @city = City.find(params[:city_id])
-    set_api
   end
 
   def edit
