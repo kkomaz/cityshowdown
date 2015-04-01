@@ -1,0 +1,10 @@
+<div class="panel panel-default col-md-5 post">
+  <p class="becca1 subtext"><%= "Category: " + post.category.name if post.category %></p>
+  <p class="becca2 subtext"><%= link_to "Expand", city_post_path(@city, post) %></p>
+  <div class="panel-body">
+    <%= link_to (image_tag post.image.url, :width => '100%' ), city_post_path(@city, post) %>
+  	<p class="tagline clear">&ldquo;<%= post.tagline %>&rdquo;</p>
+  	<hr>
+    <p class="subtext"> Submitted by <%= link_to post.user.name, user_path(post.user) %></p>
+  </div>
+</div>

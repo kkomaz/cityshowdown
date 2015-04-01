@@ -1,0 +1,15 @@
+<div id="posts">
+  <div id="posts-pro" class="col-md-6">
+  <h3 class="center">Pros</h3>
+    <% @city.posts.where(:posts => {:pro_or_con => 1}).each do |post| %>
+      <%= render 'posts/post', :post => post %>
+    <% end %>
+  </div>
+
+  <div id="posts-con" class="col-md-6">
+  <h3 class="center">Cons</h3>
+    <% @city.posts.where(:posts => {:pro_or_con => 0}).each do |post| %>
+      <%= render 'posts/post', :post => post %>
+    <% end %>
+  </div>
+</div>
