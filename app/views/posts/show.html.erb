@@ -2,11 +2,13 @@
 <div class="row">
   <div class="col-md-8 col-md-offset-2">
     <div class="panel panel-default">
-      <div class="panel-heading">
-        <%= link_to 'x', city_path(@post.city), :class => "X" %>
-        <%= image_tag @post.instagram_pic, :width => '100%' if @post.instagram_pic %>
       <div class="panel-heading center">
-        <%= image_tag @post.image.url(:medium) if @post.image %>
+        <%= link_to 'x', city_path(@post.city), :class => "X" %>
+        <% if @post.image_file_name != nil %>
+          <%= image_tag @post.image.url, :width => '100%' if @post.image %>
+        <% else %>
+          <%= image_tag @post.instagram_pic, :width => '100%' if @post.instagram_pic %>
+        <% end %>
       </div>
       
       <div class="panel-body">
