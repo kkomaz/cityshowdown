@@ -1,12 +1,53 @@
-<div class="col-md-4 col-md-offset-1">
-  <%= image_tag @user.image, size: "200" %>
+<div class="row">
+  <div class="col-sm-10">
+       <h1 class=""><%= @user.nickname %></h1>
+<br>
+  </div>
+  <div class="col-sm-2"><a href="/users" class="pull-right"><%= image_tag @user.image, size: "200" %></a>
+  </div>
 </div>
 
-<div class="col-md-7">
-<h1>NickName: <%= @user.nickname %></h1>
-<h3><%= @user.nickname %>'s Post</h3>
-<% @user.posts.each do |post| %>
-  <li><%= link_to post.tagline, city_post_path(post.city, post)%></li>
-<% end %>  
-<h3><%= @user.nickname %>'s Comments</h3>
+<br>
+
+<div class="row">
+  <div class="col-sm-3">
+    <ul class="list-group">
+      <li class="list-group-item text-muted">Profile</li>
+        <li class="list-group-item text-right">
+          <span class="pull-left">
+            <strong class="">Real name</strong>
+          </span> 
+            <% if @user.name == "" %>
+              no name given :(
+            <% else %>
+              <%= @user.name %>
+            <% end %>
+        </li>
+        <li class="list-group-item text-right">
+          <span class="pull-left">
+            <strong class="">Website</strong>
+          </span> 
+            <% if @user.name == "" %>
+              no website given :(
+            <% else %>
+              <%= @user.website %>
+            <% end %>
+    </ul>
+</div>
+
+<div class="col-sm-9" contenteditable="false" style="">
+  <div class="panel panel-default">
+      <div class="panel-heading"><%= @user.nickname %>'s Bio</div>
+      <div class="panel-body"> <%= @user.bio %></div>
+  </div>
+  
+  <div class="panel panel-default">
+      <div class="panel-heading"><%= @user.nickname %>'s Posts!</div>
+        <div class="panel-body">
+        <% @user.posts.each do |post| %>
+        <li><%= link_to post.tagline, city_post_path(post.city, post)%></li>
+        <% end %>  
+      </div>
+  </div>
+
 </div>
