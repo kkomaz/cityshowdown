@@ -78,3 +78,26 @@ a.X:hover {
 	text-decoration: none;
 	color: #000000;
 }
+
+.right {
+	float: right;
+	clear: both;
+}
+
+.scorebox {
+	/*border: 1px solid #428bca;*/
+	padding-left: 10px;
+	padding-right: 10px;
+	text-align: center;
+	/*background-color: #428bca;*/
+	background-color: #B3D1EA;
+}
+
+.city-name {
+	font-size: 72px;
+	margin-top: 10px;
+}
+
+.subnav {
+	background: rgb(248, 248, 248);
+}

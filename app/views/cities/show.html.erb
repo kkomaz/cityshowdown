@@ -1,20 +1,32 @@
 <%= link_to 'Back to Cities', root_path %>
 
-<center><h1><%= @city.name %></h1></center>
+<div class="row">
+	<div class="col-md-2"></div>
 
-<div class="center">
-	<div class='categories'>| <%= link_to "All", city_path(@city) %>
-	|<% @categories.each do |c| %>
-		<%= link_to c.name, city_category_path(@city, c) %> |
-	<% end %>
+	<div class="col-md-8 center">
+		<h1 class="city-name"><%= @city.name %></h1>
+
+		<div class='categories'>&#8226 <%= link_to "All", city_path(@city) %>
+		&#8226<% @categories.each do |c| %>
+			<%= link_to c.name, city_category_path(@city, c) %> &#8226
+		<% end %>
+		</div>
+
+		<div class="center">
+			<% if logged_in? %>
+			  <br><%= link_to 'New post', new_city_post_path(@city), :class => "btn btn-info" %>
+			<% end %>
+		</div>
+
 	</div>
 
-	<% if logged_in? %>
-	  <%= link_to 'New post', new_city_post_path(@city), :class => "btn btn-info" %> <br>
-	<% end %>
-</div>
+	<div class="col-md-2">
+		<div class='right scorebox'>
+			<h3>City Score</h3>
+			<p><%= (@city.posts.where(:posts => {:pro_or_con => 1})).length %> YAY : <%= (@city.posts.where(:posts => {:pro_or_con => 0})).length %> NAY</p>
+		</div>
+	</div>
 
-<h2>Score PLACEHOLDER</h2>
-<h3><%= (@city.posts.where(:posts => {:pro_or_con => 1})).length %> pro posts : <%= (@city.posts.where(:posts => {:pro_or_con => 0})).length %> con posts</h3>
+</div>
 
 <%= render 'posts' %>
