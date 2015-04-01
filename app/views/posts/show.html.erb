@@ -9,7 +9,21 @@
         <h1><%= @post.tagline %></h1>
         <h3><%= @post.description if @post.description  %></h3>
         <p>Category: <%= @post.category.name if @post.category %></p>
+
         <p class="pro"><%= "PRO " + @city.name if @post.pro_or_con == 1 %><p class="con"><%= "CON for " + @city.name if @post.pro_or_con == 0 %>
+
+        <%= link_to like_city_post_path(@post.city, @post), method: :put, class: "btn btn-default" do %>
+          <div class="glyphicon glyphicon-thumbs-up">
+            <div id="upvote"><%= @post.get_upvotes.size %></div>
+          </div>
+        <% end %>
+        
+        <%= link_to dislike_city_post_path(@post.city, @post), method: :put, class: "btn btn-default" do %>
+          <div class="glyphicon glyphicon-thumbs-down">
+            <div id="downvote"><%= @post.get_downvotes.size %></div>
+          </div>
+        <% end %>
+        
         <h4>Comments</h4>
           <% @post.comments.each do |comment| %>
             <p><b><%= comment.user.name %> says </b>

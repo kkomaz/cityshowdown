@@ -42,6 +42,19 @@ class PostsController < ApplicationController
     redirect_to city_path(@city)
   end
 
+  def upvote
+    @post = Post.find(params[:id])
+    @post.upvote_by current_user
+    redirect_to :back
+  end
+
+  def downvote
+    @post = Post.find(params[:id])
+    @post.downvote_from current_user
+    redirect_to :back
+  end
+
+
   private
 
   def post_params
@@ -51,5 +64,4 @@ class PostsController < ApplicationController
   def find_post
     @post = Post.find(params[:id])
   end
-
 end

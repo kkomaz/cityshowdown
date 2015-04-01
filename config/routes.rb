@@ -4,8 +4,12 @@ Rails.application.routes.draw do
 
   resources :cities, :only => [:index, :show] do
     resources :categories, :only => [:show]
-    resources :posts do
-      resources :comments
+      resources :posts do
+        resources :comments
+        member do
+          put "like", to: "posts#upvote"
+          put "dislike", to: "posts#downvote" 
+        end
     end
   end
 

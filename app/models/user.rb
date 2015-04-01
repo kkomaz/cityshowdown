@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   belongs_to :city
   has_many :posts
   has_many :comments
+  acts_as_voter
 
   def self.from_omniauth(auth)
     create! do |user|
