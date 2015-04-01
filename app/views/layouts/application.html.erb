@@ -15,12 +15,12 @@
       </div>        
       <% if logged_in? %>
         <ul class="nav navbar-nav navbar-right">
-            <li class="welcome_sign">Welcome <strong><%= current_user.name %></strong>!</li>
+            <li class="welcome_sign">Welcome <strong><%= current_user.nickname %></strong>!</li>
             <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
         </ul>
       <% else %>
         <ul class="nav navbar-nav navbar-right welcome_sign">
-          <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+          <%= link_to "Sign in with Instagram", "/auth/instagram", id: "sign_in2" %>
         </ul>
       <% end %>
   </div>
