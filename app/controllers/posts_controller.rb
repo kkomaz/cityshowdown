@@ -11,7 +11,6 @@ class PostsController < ApplicationController
     @post = Post.new
     @city = City.find(params[:city_id])
     set_api
-    binding.pry
   end
 
   def edit
