@@ -1,8 +1,14 @@
-<h1>Pick your city!</h1>
+<h1 class="center">Which city would you like to see?</h1><br>
 
-<% @cities.each do |city| %>
-	<div>
-		<p><%= link_to image_tag(city.image, width: "200"), city %></p>
-		<p><%= link_to city.name, city %></p>
-	</div>
-<% end %>
+<div class="container center">
+	<% @cities.all.each_slice(3).to_a.each do |slice| %>
+		<div class="row">
+			<% slice.each do |city| %>
+				<div class="city col-md-4">
+					<p><%= link_to image_tag(city.image, width: "90%"), city %></p>
+					<h3><%= link_to city.name, city %></h3>
+				</div>
+			<% end %>
+		</div>
+	<% end %>
+</div>

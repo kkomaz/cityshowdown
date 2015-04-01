@@ -14,10 +14,9 @@
   <div class="row">
       <%= f.collection_radio_buttons(:instagram_pic, collection, :first, :last) do |b| %>
         <div class="col-md-9 col-md-offset-2">
-        <%= b.label {b.radio_button + image_tag("#{b.text}", size: "200x200")} %>
+          <%= b.label {b.radio_button + image_tag("#{b.text}", size: "200x200")} %>
         </div>
       <% end %>      
   </div>
 <% end %>
-<br>
-<br>
+<%= link_to "Cancel", city_path(@city), :class => "btn" %>
