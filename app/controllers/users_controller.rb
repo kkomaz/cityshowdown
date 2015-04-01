@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   end
   
   def show
+    set_api
   end
 
   private
@@ -14,7 +15,7 @@ class UsersController < ApplicationController
   end
 
   def set_api
-    @photos = FacebookPhoto.new(current_user)
+    @photos = Instagram.new(@user.uid, @user.oauth_token)
   end
 
 end
