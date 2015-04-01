@@ -6,6 +6,9 @@
 <% end %>
 </div>
 
+<h2>City Score</h2>
+<h3><%= (@city.posts.where(:posts => {:pro_or_con => 1})).length %> pro posts : <%= (@city.posts.where(:posts => {:pro_or_con => 0})).length %> con posts</h3>
+
 <div id="posts">
   <div id="posts-pro">
   <h3>Pros:</h3>

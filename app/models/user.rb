@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   has_many :comments
   acts_as_voter
 
-  def self.from_omniauth(auth)yea
+  def self.from_omniauth(auth)
     create! do |user|
       user.provider = auth.provider
       user.uid = auth.uid
