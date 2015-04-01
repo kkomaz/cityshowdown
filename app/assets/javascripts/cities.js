@@ -36,4 +36,7 @@ function showCategory(e){
 		"method": 'get',
 		"dataType": "script"
 	});
+
+	$(this).blur();
+	// $(this).addClass('selected');
 }

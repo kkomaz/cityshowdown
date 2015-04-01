@@ -1,16 +1,17 @@
+<%= link_to 'Back to Cities', root_path %>
+
 <center><h1><%= @city.name %></h1></center>
 
-<div class='categories center'>| <%= link_to "All", city_path(@city) %>
-|<% @categories.each do |c| %>
-	<%= link_to c.name, city_category_path(@city, c) %> |
-<% end %>
-</div>
+<div class="center">
+	<div class='categories'>| <%= link_to "All", city_path(@city) %>
+	|<% @categories.each do |c| %>
+		<%= link_to c.name, city_category_path(@city, c) %> |
+	<% end %>
+	</div>
 
-<% if logged_in? %>
-  <%= link_to 'Write a new post', new_city_post_path(@city) %> <br>
-  <%= link_to 'Back', root_path %>
-  <% else %>
-  <%= link_to 'Back', root_path %>
-<% end %>
+	<% if logged_in? %>
+	  <%= link_to 'New post', new_city_post_path(@city), :class => "btn btn-info" %> <br>
+	<% end %>
+</div>
 
 <%= render 'posts' %>

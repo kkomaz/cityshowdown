@@ -1,7 +1,9 @@
+
 <div class="row">
   <div class="col-md-8 col-md-offset-2">
     <div class="panel panel-default">
-      <div class="panel-heading">
+      <%= link_to 'x', city_path(@post.city), :class => "X" %>
+      <div class="panel-heading center">
         <%= image_tag @post.image.url(:medium) if @post.image %>
       </div>
       
@@ -22,7 +24,6 @@
         <%= render 'comment_form' %>
       </div>
       
-      <%= link_to 'Back', city_path(@post.city) %>
       <%= render 'footer' if current_user == Post.find(params[:id]).user %>
     </div>
   </div>

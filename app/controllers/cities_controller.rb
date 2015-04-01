@@ -7,6 +7,7 @@ class CitiesController < ApplicationController
   def show
     @city = City.find(params[:id])
     @categories = Category.all
+    @posts = @city.posts
 
     respond_to do |f|
       f.js {}
