@@ -21,8 +21,9 @@ cities = {
 }
 cities.each {|city, image| City.create(name: city, image: image)}
 
-User.create(name: "Becca Shapiro")
-User.create(name: "Chloe Lee")
+User.create(nickname: "Jack Johnson")
+User.create(nickname: "Jill Dorn")
+User.create(nickname: "Bob Marley")
 
 categories = ['Food', 'Nightlife', 'Style', 'History', "Art", "Sports", 'Architecture', "Other"]
 categories.each {|category| Category.create(name: category)}

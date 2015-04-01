@@ -3,10 +3,10 @@
 </div>
 
 <div class="col-md-7">
-<h1>HoldTag: <%= @user.nickname %></h1>
+<h1>NickName: <%= @user.nickname %></h1>
 <h3><%= @user.nickname %>'s Post</h3>
 <% @user.posts.each do |post| %>
-  <%= post.tagline  %>
+  <%= link_to post.tagline, city_post_path(post.city, post)  %>
 <% end %>  
 <h3><%= @user.nickname %>'s Comments</h3>
 </div>

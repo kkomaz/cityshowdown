@@ -8,9 +8,10 @@ class PostsController < ApplicationController
   end
 
   def new
-    # binding.pry
     @post = Post.new
     @city = City.find(params[:city_id])
+    set_api
+    binding.pry
   end
 
   def edit
@@ -50,6 +51,10 @@ class PostsController < ApplicationController
 
   def find_post
     @post = Post.find(params[:id])
+  end
+
+  def set_api
+    @photos = Instagram.new(current_user.uid, current_user.oauth_token)
   end
 
 end
