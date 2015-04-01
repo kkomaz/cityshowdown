@@ -10,7 +10,7 @@ class Instagram
   end
 
   def open_url
-    @photos_json = JSON.load(open(@api_call))["data"][0]["images"]
+    @photos_json = JSON.load(open(@api_call))["data"]
   end
 
 end

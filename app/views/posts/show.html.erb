@@ -2,6 +2,7 @@
   <div class="col-md-8 col-md-offset-2">
     <div class="panel panel-default">
       <div class="panel-heading">
+        <%= image_tag @post.instagram_pic if @post.instagram_pic %>
         <%= image_tag @post.image.url(:medium) if @post.image %>
       </div>
       
@@ -41,4 +42,3 @@
     </div>
   </div>
 </div>
-

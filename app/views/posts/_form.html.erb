@@ -5,4 +5,19 @@
   <%= f.input :pro_or_con, as: :radio_buttons, collection: [["Pro", 1], ["Con", 0]], label: "Is this a PRO for your city, or a CON?" %>
   <%= f.input :image, :as => :file %>
   <%= f.button :submit %>
+
+  <% collection = @photos.photos_json[0...12].collect do |photo| %>
+    <% photo_url = photo["images"]["standard_resolution"]["url"] %>
+    <% [photo_url, photo_url] %>
+  <% end %>
+
+  <div class="row">
+      <%= f.collection_radio_buttons(:instagram_pic, collection, :first, :last) do |b| %>
+        <div class="col-md-9 col-md-offset-2">
+        <%= b.label {b.radio_button + image_tag("#{b.text}", size: "200x200")} %>
+        </div>
+      <% end %>      
+  </div>
 <% end %>
+<br>
+<br>

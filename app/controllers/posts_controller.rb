@@ -11,7 +11,6 @@ class PostsController < ApplicationController
     @post = Post.new
     @city = City.find(params[:city_id])
     set_api
-    binding.pry
   end
 
   def edit
@@ -23,7 +22,7 @@ class PostsController < ApplicationController
     @city = City.find(params[:city_id])
     @post.city_id = @city.id
     if @post.save
-      redirect_to city_path(@post.city)
+      redirect_to city_post_path(@city, @post)
     else
       render 'new' #this was breaking because we iddn't have an @city in our create route.
     end
@@ -59,7 +58,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:tagline, :description, :image, :category_id, :pro_or_con)  
+    params.require(:post).permit(:tagline, :description, :image, :category_id, :pro_or_con, :instagram_pic)  
   end
 
   def find_post
