@@ -22,9 +22,9 @@ class PostsController < ApplicationController
     @city = City.find(params[:city_id])
     @post.city_id = @city.id
     if @post.save
-      redirect_to city_post_path(@city, @post)
+      redirect_to city_post_path(@city, @post) #shouldn't this go to city_path(@city)? => city show page, instead of post show page.
     else
-      render 'new' #this was breaking because we iddn't have an @city in our create route.
+      render 'new'
     end
   end
 
