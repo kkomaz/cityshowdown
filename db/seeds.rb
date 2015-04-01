@@ -9,14 +9,14 @@
 
 
 cities = { 
-  "New York": "https://hausmanllc.files.wordpress.com/2013/06/statue-of-liberty-in-new-york-city-united-states.jpg",
-  "Seattle": "https://citizenfable.files.wordpress.com/2012/11/seattle-skyline-picture.jpeg",
-  "Chicago": "http://www.marriott.com/Images/MiniStores/Header_Images/Destinations/en/Chicago_hotels_skyline_fireworks.jpg",
-  "Boston": "http://www.massvacation.com/wp-content/uploads/2013/06/1_Boston__0000_iStock_000011012295Large.jpg",
-  "Austin": "http://centraltexasmurals.com/wp-content/uploads/2011/01/good-morning-austin-jpg-copy.jpg",
-  "Los Angeles": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT18uyZ9e35V4VsANzZeyXtUCPgQ3j4DRlsBLEEkCLB9mVzCB5P",
-  "San Francisco": "http://www.sanfrancisco.travel/sites/sftraveldev.prod.acquia-sites.com/files/SanFrancisco_0.jpg",
-  "Washington D.C.": "http://images.boomsbeat.com/data/images/full/4684/1-jpg.jpg",
+  "New York": "http://img3.wikia.nocookie.net/__cb20131222172706/glee/images/thumb/c/c8/NY-skyline.jpg/800px-NY-skyline.jpg",
+  "Seattle": "http://www.usapics.net/wallpapers/2012/03/seattle-tower-washington--600x800.jpg",
+  "Chicago": "http://www.altergroup.com/blog/wp-content/uploads/2010/10/downtown-chicago.jpg",
+  "Boston": "http://guide.trustedtours.com/wp-content/uploads/2012/08/800px-Public_Garden_Boston.jpg",
+  "Austin": "https://farm6.staticflickr.com/5507/11455436595_a8a29323f9_c.jpg",
+  "Los Angeles": "http://indianinkonline.com/wp-content/uploads/2014/11/palm-trees-800x600.jpg",
+  "San Francisco": "http://www.forgeips.co.uk/sites/default/files/Golden_Gate_Bridge_.jpg",
+  "Washington D.C.": "http://ta.firefly-hosting.com/wp-content/uploads/2013/07/fireworks-washington-dc.jpg",
   "Portland": "https://waldobungie.files.wordpress.com/2011/06/dsc_0189.jpg"
 }
 cities.each {|city, image| City.create(name: city, image: image)}
