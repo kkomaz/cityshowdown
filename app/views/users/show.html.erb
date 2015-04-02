@@ -1,13 +1,12 @@
 <div class="row">
   <div class="col-sm-10">
-       <h1 class=""><%= @user.nickname %></h1>
-<br>
+    <h1><%= @user.nickname %></h1>
+    <h1>Current Rating: <%= @user.total_points %></h1>
+  <br>
   </div>
   <div class="col-sm-2"><a href="/users" class="pull-right"><%= image_tag @user.image, size: "200" %></a>
   </div>
 </div>
-
-<br>
 
 <div class="row">
   <div class="col-sm-3">
@@ -41,13 +40,22 @@
       <div class="panel-body"> <%= @user.bio %></div>
   </div>
   
-  <div class="panel panel-default">
-      <div class="panel-heading"><%= @user.nickname %>'s Posts!</div>
-        <div class="panel-body">
-        <% @user.posts.each do |post| %>
-        <li><%= link_to post.tagline, city_post_path(post.city, post)%></li>
-        <% end %>  
+<div class="panel panel-default target">
+  <div class="panel-heading"><%= @user.nickname %>'s Posts!</div>
+    <div class="panel-body">
+      <div class="row">
+        <% @posts.each do |post| %>
+          <div class="col-md-4">
+          <div class="thumbnail">
+            <%= link_to (image_tag post.instagram_pic, size: "300x200"), city_post_path(post.city, post) if post.instagram_pic %>
+          </div>
+          <div class="caption center">
+            <h4><%= post.tagline %></h4>
+            <h4><%= post.city.name %></h4>
+          </div>
+          </div>
+        <% end %>
       </div>
-  </div>
-
+    </div>
+</div>
 </div>

@@ -17,8 +17,22 @@ class User < ActiveRecord::Base
     end
   end
 
+  def post_finder
+    self.posts.collect do |post|
+      post.get_upvotes.size - post.get_downvotes.size
+    end.inject(:+)
+  end
+
+  def total_points
+    post_finder * 10
+  end
+
   def self.set_user(auth)
     User.find_by_provider_and_uid(auth["provider"], auth["uid"]) || User.from_omniauth(auth)
+  end
+
+  def self.reverse_order
+    self.reverse
   end
 
 end
