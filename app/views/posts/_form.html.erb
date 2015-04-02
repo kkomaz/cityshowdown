@@ -17,7 +17,6 @@
   </div>
   
   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#instagram_pics">Choose Instagram Photo</button><br>
-  <%= f.button :submit %>
 
   <% collection = @photos.photos_json[0...12].collect do |photo| %>
     <% photo_url = photo["images"]["standard_resolution"]["url"] %>
@@ -45,6 +44,7 @@
       </div>
     </div>
   </div>
+  <br>
   <%= f.button :submit %>
 <% end %>
 

@@ -34,7 +34,7 @@
             <% end %>
 
           <p>Add a comment:</p>
-          <%= render 'comment_form', post: @post %>
+          <%= render 'comment_form', post: @post, city: @city, comment: Comment.new %>
         </div>
         
         <%= render 'footer' if current_user == Post.find(params[:id]).user %>
