@@ -4,7 +4,7 @@
     <h1>Current Rating: <%= @user.total_points %></h1>
   <br>
   </div>
-  <div class="col-sm-2"><a href="/users" class="pull-right"><%= image_tag @user.image, size: "200" %></a>
+  <div class="col-sm-2"><a href="#" class="pull-right"><%= image_tag @user.image, size: "200" %></a>
   </div>
 </div>
 
@@ -55,8 +55,8 @@
           </div>
           </div>
         <% end %>
-      <%#= paginate @posts %>
       </div>
+      <center><%= paginate @posts %>
     </div>
 </div>
 </div>

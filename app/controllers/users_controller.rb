@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
   
   def show
-    @posts = Post.where(:user_id => @user.id).order("created_at DESC").page(params[:page])
+    @posts = Post.where(:user_id => @user.id).order("created_at DESC").page(params[:page]).per(3)
   end
 
   private
