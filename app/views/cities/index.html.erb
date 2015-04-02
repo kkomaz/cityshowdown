@@ -1,4 +1,8 @@
-<h1 class="center">Which city would you like to see?</h1><br>
+<head>
+	<link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
+</head>
+
+<h1 class="center", id="headline">Which city would you like to see?</h1><br>
 
 <div class="container center">
 	<% @cities.all.each_slice(3).to_a.each do |slice| %>
@@ -6,7 +10,7 @@
 			<% slice.each do |city| %>
 				<div class="city col-md-4">
 					<p><%= link_to image_tag(city.image, width: "90%"), city %></p>
-					<h3><%= link_to city.name, city %></h3>
+					<h3 class="city_name"><%= link_to city.name, city %></h3>
 				</div>
 			<% end %>
 		</div>
