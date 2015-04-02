@@ -37,7 +37,9 @@
           <%= render 'comment_form', post: @post, city: @city, comment: Comment.new %>
         </div>
         
-        <%= render 'footer' if current_user == Post.find(params[:id]).user %>
+      <% if current_user == @post.user %>
+        <%= render 'posts/footer', :post => post %>
+      <% end  %>
       </div>
     </div>
   </div>
