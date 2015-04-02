@@ -1,10 +1,14 @@
+<head>
+	<link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
+</head>
+
 <%= link_to 'Back to Cities', root_path %>
 
 <div class="row">
 	<div class="col-md-2"></div>
 
 	<div class="col-md-8 center">
-		<h1 class="city-name"><%= @city.name %></h1>
+		<h1 class="city-name"><%= @city.name.upcase %></h1>
 
 		<div class='categories'>&#8226 <%= link_to "All", city_path(@city) %>
 		&#8226<% @categories.each do |c| %>
@@ -22,7 +26,7 @@
 
 	<div class="col-md-2">
 		<div class='right scorebox'>
-			<h3>City Score</h3>
+			<h3 id ="city_score">City Score</h3>
 			<p><%= (@city.posts.where(:posts => {:pro_or_con => 1})).length %> YAY : <%= (@city.posts.where(:posts => {:pro_or_con => 0})).length %> NAY</p>
 		</div>
 	</div>
