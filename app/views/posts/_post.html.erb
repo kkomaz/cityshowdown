@@ -9,7 +9,7 @@
   <% end %>
   	<p class="tagline clear">&ldquo;<%= post.tagline %>&rdquo;</p>
   	<hr>
-    <p class="subtext"> Submitted by <%= link_to post.user.nickname, user_path(post.user) %></p>
-    <p><%= image_tag post.user.image, size: "60" %></p>
+    <center><p class="subtext"> Submitted by <%= link_to post.user.nickname, user_path(post.user) %></p></center>
+    <center><p><%= image_tag post.user.image, size: "60" %></p></center>
   </div>
 </div>

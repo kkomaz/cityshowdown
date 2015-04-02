@@ -3,10 +3,13 @@
     <div class="panel panel-default">
       <div class="panel-heading center">
         <div class="row">
-        <div class="col-xs-6 col-md-4"></div>
-          <%= link_to @post.user.nickname, user_path(@post.user) %>
-          <%= link_to 'x', city_path(@post.city), :class => "X" %>
-        </div>        
+        <div class="col-xs-2 col-md-4">
+          <%= link_to @post.user.nickname, user_path(@post.user), class: "user" %>
+        </div>   
+        <div class="col-xs-12 col-md-8">
+          <%= link_to 'x', city_path(@post.city), class: "X"%>
+        </div>
+        </div>
         <% if @post.image_file_name != nil %>
           <%= image_tag @post.image.url, :width => '100%' if @post.image %>
         <% else %>

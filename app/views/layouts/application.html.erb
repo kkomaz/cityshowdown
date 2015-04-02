@@ -15,7 +15,7 @@
       </div>        
       <% if logged_in? %>
         <ul class="nav navbar-nav navbar-right">
-            <li class="welcome_sign">Welcome <strong><%= current_user.nickname %></strong>!</li>
+            <li class="welcome_sign">Welcome <strong><%= link_to current_user.nickname, user_path(current_user) %></strong>!</li>
             <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
         </ul>
       <% else %>

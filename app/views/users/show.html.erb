@@ -1,17 +1,19 @@
 <div class="row">
   <div class="col-sm-10">
     <h1><%= @user.nickname %></h1>
-    <h1>Current Rating: <%= @user.total_points %></h1>
+    <ul class="nav nav-pills">
+      <span class="label label-default">Current Rating: <span class="badge"><%= @user.total_points %></span> </span>
+    </ul>
   <br>
   </div>
   <div class="col-sm-2"><a href="#" class="pull-right"><%= image_tag @user.image, size: "200" %></a>
   </div>
 </div>
-
+<br>
 <div class="row">
   <div class="col-sm-3">
     <ul class="list-group">
-      <li class="list-group-item text-muted">Profile</li>
+      <li class="list-group-item active">Profile</li>
         <li class="list-group-item text-right">
           <span class="pull-left">
             <strong class="">Real name</strong>
@@ -35,28 +37,22 @@
 </div>
 
 <div class="col-sm-9" contenteditable="false" style="">
-  <div class="panel panel-default">
+  <div class="panel panel-primary">
       <div class="panel-heading"><%= @user.nickname %>'s Bio</div>
       <div class="panel-body"> <%= @user.bio %></div>
   </div>
   
-<div class="panel panel-default target">
+<div class="panel panel-primary target">
   <div class="panel-heading"><%= @user.nickname %>'s Posts!</div>
     <div class="panel-body">
-      <div class="row">
-        <% @posts.each do |post| %>
-          <div class="col-md-4">
-          <div class="thumbnail">
-            <%= link_to (image_tag post.instagram_pic, size: "300x200"), city_post_path(post.city, post) if post.instagram_pic %>
-          </div>
-          <div class="caption center">
-            <h4><%= post.tagline %></h4>
-            <h4><%= post.city.name %></h4>
-          </div>
-          </div>
-        <% end %>
+      <div class="row user_posts">
+        <%= render 'post' %>
       </div>
-      <center><%= paginate @posts %>
+    <center>
+      <div class="pagination" id="paginator">
+        <%= paginate @posts, :remote => true %>
+      </div>
+    </center>
     </div>
 </div>
 </div>
