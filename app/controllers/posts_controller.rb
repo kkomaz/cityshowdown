@@ -6,6 +6,7 @@ class PostsController < ApplicationController
   def show
     @city = City.find(params[:city_id])
     @comment = Comment.new
+    #this is abstracted to cities controller but kept in here to respond to html.
   end
 
   def new

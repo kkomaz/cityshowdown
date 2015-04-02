@@ -1,37 +1,38 @@
-
-<div class="row">
-  <div class="col-md-8 col-md-offset-2">
-    <div class="panel panel-default">
-      <div class="panel-heading center">
-        <%= link_to 'x', city_path(@post.city), :class => "X" %>
-        <% if @post.image_file_name != nil %>
-          <%= image_tag @post.image.url, :width => '100%' if @post.image %>
-        <% else %>
-          <%= image_tag @post.instagram_pic, :width => '100%' if @post.instagram_pic %>
-        <% end %>
-      </div>
-      
-      <div class="panel-body">
-        <h1><%= @post.tagline %></h1>
-        <h3><%= @post.description if @post.description  %></h3>
-        <p>Category: <%= @post.category.name if @post.category %></p>
-        <p class="pro"><%= "PRO " + @city.name if @post.pro_or_con == 1 %></p> <p class="con"><%= "CON for " + @city.name if @post.pro_or_con == 0 %> </p>
-
-        <%= render 'votes' %>
-        
-        <h4>Comments</h4>
-          <% @post.comments.each do |comment| %>
-            <p><b><%= comment.user.nickname %> says </b>
-            <%= comment.content %> 
-                <%= link_to 'Delete Comment', city_post_comment_path(@city, @post, comment), method: :delete, :data => {:confirm => "Are you sure?"} if current_user == comment.user%>
-            </p>
+<div id="post-modal">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="panel panel-default">
+        <div class="panel-heading center">
+          <%= link_to 'x', city_path(@post.city), :class => "X" %>
+          <% if @post.image_file_name != nil %>
+            <%= image_tag @post.image.url, :width => '100%' if @post.image %>
+          <% else %>
+            <%= image_tag @post.instagram_pic, :width => '100%' if @post.instagram_pic %>
           <% end %>
+        </div>
+        
+        <div class="panel-body">
+          <h1><%= @post.tagline %></h1>
+          <h3><%= @post.description if @post.description  %></h3>
+          <p>Category: <%= @post.category.name if @post.category %></p>
+          <p class="pro"><%= "PRO " + @city.name if @post.pro_or_con == 1 %></p> <p class="con"><%= "CON for " + @city.name if @post.pro_or_con == 0 %> </p>
 
-        <p>Add a comment:</p>
-        <%= render 'comment_form' %>
+          <%= render 'votes', post: @post %>
+          
+          <h4>Comments</h4>
+            <% @post.comments.each do |comment| %>
+              <p><b><%= comment.user.nickname %> says </b>
+              <%= comment.content %> 
+                  <%= link_to 'Delete Comment', city_post_comment_path(@city, @post, comment), method: :delete, :data => {:confirm => "Are you sure?"} if current_user == comment.user%>
+              </p>
+            <% end %>
+
+          <p>Add a comment:</p>
+          <%= render 'comment_form', post: @post %>
+        </div>
+        
+        <%= render 'footer' if current_user == Post.find(params[:id]).user %>
       </div>
-      
-      <%= render 'footer' if current_user == Post.find(params[:id]).user %>
     </div>
   </div>
 </div>

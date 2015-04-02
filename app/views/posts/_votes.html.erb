@@ -1,13 +1,13 @@
 <div class="vote">
-  <%= link_to like_city_post_path(@post.city, @post), method: :put, class: "btn btn-default", id: "up" do %>
+  <%= link_to like_city_post_path(post.city, post), method: :put, class: "btn btn-default", id: "up" do %>
     <div class="glyphicon glyphicon-thumbs-up">
-      <div id="upvote"><%= @post.get_upvotes.size %></div>
+      <div id="upvote"><%= post.get_upvotes.size %></div>
     </div>
   <% end %>
 
-  <%= link_to dislike_city_post_path(@post.city, @post), method: :put, class: "btn btn-default", id: "down" do %>
+  <%= link_to dislike_city_post_path(post.city, post), method: :put, class: "btn btn-default", id: "down" do %>
     <div class="glyphicon glyphicon-thumbs-down">
-      <div id="downvote"><%= @post.get_downvotes.size %></div>
+      <div id="downvote"><%= post.get_downvotes.size %></div>
     </div>
 <% end %>
 </div>

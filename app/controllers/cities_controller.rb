@@ -8,6 +8,7 @@ class CitiesController < ApplicationController
     @city = City.find(params[:id])
     @categories = Category.all
     @posts = @city.posts
+    @comment = Comment.new # becca added for modal
 
     respond_to do |f|
       f.js {}
