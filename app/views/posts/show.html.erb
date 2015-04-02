@@ -17,17 +17,7 @@
         <p>Category: <%= @post.category.name if @post.category %></p>
         <p class="pro"><%= "PRO " + @city.name if @post.pro_or_con == 1 %></p> <p class="con"><%= "CON for " + @city.name if @post.pro_or_con == 0 %> </p>
 
-        <%= link_to like_city_post_path(@post.city, @post), method: :put, class: "btn btn-default" do %>
-          <div class="glyphicon glyphicon-thumbs-up">
-            <div id="upvote"><%= @post.get_upvotes.size %></div>
-          </div>
-        <% end %>
-        
-        <%= link_to dislike_city_post_path(@post.city, @post), method: :put, class: "btn btn-default" do %>
-          <div class="glyphicon glyphicon-thumbs-down">
-            <div id="downvote"><%= @post.get_downvotes.size %></div>
-          </div>
-        <% end %>
+        <%= render 'votes' %>
         
         <h4>Comments</h4>
           <% @post.comments.each do |comment| %>
