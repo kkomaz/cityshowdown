@@ -23,21 +23,22 @@
         <p>Category: <%= @post.category.name if @post.category %></p>
         <p class="pro"><%= "PRO " + @city.name if @post.pro_or_con == 1 %></p> <p class="con"><%= "CON for " + @city.name if @post.pro_or_con == 0 %> </p>
 
-        <%= render 'votes' %>
-        
-        <h4>Comments</h4>
-          <% @post.comments.each do |comment| %>
-            <p><b><%= comment.user.nickname %> says </b>
-            <%= comment.content %> 
-                <%= link_to 'Delete Comment', city_post_comment_path(@city, @post, comment), method: :delete, :data => {:confirm => "Are you sure?"} if current_user == comment.user%>
-            </p>
-          <% end %>
+          <%= render 'votes', post: @post %>
+          
+          <h4>Comments</h4>
+            <% @post.comments.each do |comment| %>
+              <p><b><%= comment.user.nickname %> says </b>
+              <%= comment.content %> 
+                  <%= link_to 'Delete Comment', city_post_comment_path(@city, @post, comment), method: :delete, :data => {:confirm => "Are you sure?"} if current_user == comment.user%>
+              </p>
+            <% end %>
 
-        <p>Add a comment:</p>
-        <%= render 'comment_form' %>
+          <p>Add a comment:</p>
+          <%= render 'comment_form', post: @post %>
+        </div>
+        
+        <%= render 'footer' if current_user == Post.find(params[:id]).user %>
       </div>
-      
-      <%= render 'footer' if current_user == Post.find(params[:id]).user %>
     </div>
   </div>
 </div>

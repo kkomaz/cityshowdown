@@ -10,9 +10,9 @@
 	<div class="col-md-8 center">
 		<h1 class="city-name"><%= @city.name.upcase %></h1>
 
-		<div class='categories'>&#8226 <%= link_to "All", city_path(@city) %>
+		<div class='categories'>&#8226 <%= link_to "ALL", city_path(@city) %>
 		&#8226<% @categories.each do |c| %>
-			<%= link_to c.name, city_category_path(@city, c) %> &#8226
+			<%= link_to c.name.upcase, city_category_path(@city, c) %> &#8226
 		<% end %>
 		</div>
 
@@ -33,4 +33,4 @@
 
 </div>
 
-<%= render 'posts' %>
+<%= render 'posts/posts' %>

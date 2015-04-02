@@ -1,5 +1,5 @@
 <div id="posts">
-  <div id="posts-pro" class="col-md-6">
+  <div class="col-md-6">
   <h3 class="center">YAY</h3>
     <div class="js-masonry">
       <% @posts.where(:posts => {:pro_or_con => 1}).each do |post| %>
@@ -8,7 +8,7 @@
     </div>
   </div>
 
-  <div id="posts-con" class="col-md-6">
+  <div class="col-md-6">
   <h3 class="center">NAY</h3>
     <div class="js-masonry">
       <% @posts.where(:posts => {:pro_or_con => 0}).each do |post| %>
