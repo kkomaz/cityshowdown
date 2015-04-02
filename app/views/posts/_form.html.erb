@@ -1,11 +1,21 @@
 <%= simple_form_for [@city, @post] do |f| %>
-  <%= f.input :tagline %>
-  <%= f.input :description %>
+  <div class="form-group">
+    <%= f.input :tagline, input_html: {class: 'form-control'} %>
+  </div>
+  <div class="form-group">
   <%= f.input :category_id, collection: Category.all.collect {|c| [c.name, c.id]}, include_blank: false %>
-  <%= f.input :pro_or_con, as: :radio_buttons, collection: [["Pro", 1], ["Con", 0]], label: "Is this a PRO for your city, or a CON?" %>
+  </div>
+  <div class="form-group">
+  <%= f.input :description, as: :text, input_html: {class: 'form-control', rows: "10"} %>
+  </div>
+  <div class="form-group">
+  <%= f.input :pro_or_con, as: :radio_buttons, collection: [["YAY", 1], ["NAY", 0]], label: "Is this a YAY? for your city, or a NAY?" %>
+  </div>
+  <div class="form-group">
+  <h2>Upload an image or choose from your instagram!</h2>
   <%= f.input :image, :as => :file %>
-  <%= f.button :submit %>
-
+  </div>
+  
   <% collection = @photos.photos_json[0...12].collect do |photo| %>
     <% photo_url = photo["images"]["standard_resolution"]["url"] %>
     <% [photo_url, photo_url] %>
@@ -18,5 +28,6 @@
         </div>
       <% end %>      
   </div>
+  <%= f.button :submit %>
 <% end %>
 <%= link_to "Cancel", city_path(@city), :class => "btn" %>
