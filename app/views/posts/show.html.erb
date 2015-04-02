@@ -38,7 +38,7 @@
         </div>
         
       <% if current_user == @post.user %>
-        <%= render 'posts/footer', :post => post %>
+        <%= render 'posts/footer', :post => @post %>
       <% end  %>
       </div>
     </div>
