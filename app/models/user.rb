@@ -31,8 +31,4 @@ class User < ActiveRecord::Base
     User.find_by_provider_and_uid(auth["provider"], auth["uid"]) || User.from_omniauth(auth)
   end
 
-  def self.reverse_order
-    self.reverse
-  end
-
 end
