@@ -5,7 +5,7 @@
     </div>
     <div class="caption center">
       <h3><b><%= link_to post.tagline, city_post_path(post.city, post) %></b></h3>
-      <h4><%= link_to post.city.name, city_path %></h4>
+      <h4><%= link_to post.city.name, city_path(post.city) %></h4>
       <h4><%= pro_con_check(post) %></h4>
     </div>
   </div>
