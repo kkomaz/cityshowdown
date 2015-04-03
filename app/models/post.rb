@@ -7,4 +7,5 @@ class Post < ActiveRecord::Base
   belongs_to :category
   validates :tagline, presence: true
   acts_as_votable
+  validates :pro_or_con, presence: true
 end

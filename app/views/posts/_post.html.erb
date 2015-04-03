@@ -1,7 +1,7 @@
 <div class="panel panel-default col-md-5 post">
   <p class="becca1 subtext"><%= "Category: " + post.category.name if post.category %></p>
   
-  <button type="button" class="becca2 subtext" data-toggle="modal" data-target="#post-modal-<%= post.id %>">EXPAND</button>
+  <p class="becca2 subtext"><%= link_to "Expand", city_post_path(@city, post) %></p>
 
   <div class="panel-body">
     <%= image_check(post) %> 

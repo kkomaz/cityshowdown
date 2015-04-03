@@ -12,8 +12,8 @@
   <%= f.input :pro_or_con, as: :radio_buttons, collection: [["YAY", 1], ["NAY", 0]], label: "Is this a YAY? for your city, or a NAY?" %>
   </div>
   <div class="form-group">
-  <h2>Upload an image or choose from your instagram!</h2>
-  <%= f.input :image, :as => :file %>
+  <h4>Upload an image or choose from your instagram!</h4>
+  
   </div>
   
   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#instagram_pics">Choose Instagram Photo</button><br>
@@ -40,6 +40,8 @@
     </div>
   </div>
   <br>
+  <%= f.input :image, :as => :file, class: "btn btn-primary", :label => false %>
+  <hr>
   <%= f.button :submit %>
 <% end %>
 
