@@ -10,11 +10,7 @@
           <%= link_to 'x', city_path(@post.city), class: "X"%>
         </div>
         </div>
-        <% if @post.image_file_name != nil %>
-          <%= image_tag @post.image.url, :width => '100%' if @post.image %>
-        <% else %>
-          <%= image_tag @post.instagram_pic, :width => '100%' if @post.instagram_pic %>
-        <% end %>
+        <%= image_check(@post) %>
       </div>
       
       <div class="panel-body">
@@ -24,17 +20,14 @@
         <p class="pro"><%= "PRO " + @city.name if @post.pro_or_con == 1 %></p> <p class="con"><%= "CON for " + @city.name if @post.pro_or_con == 0 %> </p>
 
           <%= render 'votes', post: @post %>
-          
           <h4>Comments</h4>
-            <% @post.comments.each do |comment| %>
-              <p><b><%= comment.user.nickname %> says </b>
-              <%= comment.content %> 
-                  <%= link_to 'Delete Comment', city_post_comment_path(@city, @post, comment), method: :delete, :data => {:confirm => "Are you sure?"} if current_user == comment.user%>
-              </p>
-            <% end %>
-
+          <div id="task-form-comments">
+            <%= render @comments %>
+          </div>
+          <% if logged_in? %>
           <p>Add a comment:</p>
           <%= render 'comment_form', post: @post, city: @city, comment: Comment.new %>
+          <% end %>
         </div>
         
       <% if current_user == @post.user %>

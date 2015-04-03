@@ -17,12 +17,7 @@
   </div>
   
   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#instagram_pics">Choose Instagram Photo</button><br>
-
-  <% collection = @photos.photos_json[0...25].collect do |photo| %>
-    <% photo_url = photo["images"]["standard_resolution"]["url"] %>
-    <% [photo_url, photo_url] %>
-  <% end %>
-
+  
   <div class="modal fade" id="instagram_pics" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -31,7 +26,7 @@
           </div>
         <div class="modal-body">
             <div class="row">
-              <%= f.collection_radio_buttons(:instagram_pic, collection, :first, :last) do |b| %>
+              <%= f.collection_radio_buttons(:instagram_pic, photos_array(@photos), :first, :last) do |b| %>
                 <div class="col-md-9 col-md-offset-2">
                   <%= b.label {b.radio_button + image_tag("#{b.text}", size: "200x200")} %>
                 </div>

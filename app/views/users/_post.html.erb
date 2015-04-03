@@ -1,11 +1,12 @@
 <% @posts.each do |post| %>
   <div class="col-md-4">
-  <div class="thumbnail">
-    <%= link_to (image_tag post.instagram_pic, size: "300x200"), city_post_path(post.city, post) if post.instagram_pic %>
-  </div>
-  <div class="caption center">
-    <h4><%= post.tagline %></h4>
-    <h4><%= post.city.name %></h4>
-  </div>
+    <div class="thumbnail">
+      <%= image_check(post) %>
+    </div>
+    <div class="caption center">
+      <h4><%= link_to post.tagline, city_post_path(post.city, post) %></h4>
+      <h4><%= post.city.name %></h4>
+    </div>
   </div>
 <% end %>
+

@@ -5,8 +5,15 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     @comment = @post.comments.build(comment_params)
     @comment.user = current_user
-    @comment.save
-    redirect_to city_post_path(@city, @post)
+    if @comment.save
+      respond_to do |f|
+        f.html{redirect_to city_post_path(@city, @post)}
+        f.js {}
+      end
+    else
+      flash[:error] = "Comment did not go through!"
+      redirect_to city_post_path(@city, @post)
+    end
   end
 
   def destroy

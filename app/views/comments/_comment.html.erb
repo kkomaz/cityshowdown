@@ -1,0 +1,5 @@
+<div id="single-comment-<%= comment.id %>">
+  <p><b><%= comment.user.nickname %> says </b> <%= comment.content %> 
+  <%= link_to 'Delete Comment', city_post_comment_path(@city, @post, comment), method: :delete, :data => {:confirm => "Are you sure?"} if current_user == comment.user%>
+  </p>
+</div>

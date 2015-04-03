@@ -4,11 +4,7 @@
   <button type="button" class="becca2 subtext" data-toggle="modal" data-target="#post-modal-<%= post.id %>">EXPAND</button>
 
   <div class="panel-body">
-  <% if post.image_file_name != nil %>
-    <%= link_to (image_tag post.image.url, :width => '100%'), city_post_path(post.city, post) if post.image %>
-  <% else %>
-    <%= link_to (image_tag post.instagram_pic, :width => '100%'), city_post_path(post.city, post) if post.instagram_pic %>
-  <% end %>
+    <%= image_check(post) %> 
   	<p class="tagline clear">&ldquo;<%= post.tagline %>&rdquo;</p>
   	<hr>
     <center><p class="subtext"> Submitted by <%= link_to post.user.nickname, user_path(post.user) %></p></center>
@@ -42,7 +38,7 @@
             <% end %>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
           <p>Add a comment:</p>
-          <%= render 'posts/comment_form', :post => post, :city => @city, :comment => @comment %>        
+            <%= render 'posts/comment_form', :post => post, :city => @city, :comment => @comment %>   
       </div>
       <% if current_user == post.user %>
         <%= render 'posts/footer', :post => post %>
