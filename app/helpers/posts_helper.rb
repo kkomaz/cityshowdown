@@ -9,5 +9,13 @@ module PostsHelper
       link_to image_tag("images.jpeg", :width => '100%'), city_post_path(post.city, post)
     end
   end
+
+  def pro_con_check(post)
+    if post.pro_or_con == 1
+      link_to image_tag("up.jpeg", :width => '25%'), city_post_path(post.city, post)
+    else
+      link_to image_tag("nay.jpeg", :width => '25%'), city_post_path(post.city, post)
+    end
+  end
   
 end

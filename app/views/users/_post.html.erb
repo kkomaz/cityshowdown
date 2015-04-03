@@ -4,8 +4,9 @@
       <%= image_check(post) %>
     </div>
     <div class="caption center">
-      <h4><%= link_to post.tagline, city_post_path(post.city, post) %></h4>
-      <h4><%= post.city.name %></h4>
+      <h3><b><%= link_to post.tagline, city_post_path(post.city, post) %></b></h3>
+      <h4><%= link_to post.city.name, city_path %></h4>
+      <h4><%= pro_con_check(post) %></h4>
     </div>
   </div>
 <% end %>
