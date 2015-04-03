@@ -12,39 +12,3 @@
   </div>
 </div>
 
-  <%# MODAL %>
-<div class="modal fade bs-example-modal-lg" id="post-modal-<%= post.id %>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <% if post.image_file_name != nil %>
-        <%= image_tag post.image.url, :width => '100%' if post.image %>
-      <% else %>
-        <%= image_tag post.instagram_pic, :width => '100%' if post.instagram_pic %>
-      <% end %>
-        <div class="panel-body">
-          <h1><%= post.tagline %></h1>
-          <h3><%= post.description if post.description  %></h3>
-          <p>Category: <%= post.category.name if post.category %></p>
-          <p class="pro"><%= "PRO " + @city.name if post.pro_or_con == 1 %></p> <p class="con"><%= "CON for " + @city.name if post.pro_or_con == 0 %> </p>
-
-          <%= render 'posts/votes', :post => post %>
-          
-          <h4>Comments</h4>
-            <% post.comments.each do |comment| %>
-              <p><b><%= comment.user.nickname %> says </b>
-              <%= comment.content %> 
-                  <%= link_to 'Delete Comment', city_post_comment_path(@city, post, comment), method: :delete, :data => {:confirm => "Are you sure?"} if current_user == comment.user%>
-              </p>
-            <% end %>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <p>Add a comment:</p>
-            <%= render 'posts/comment_form', :post => post, :city => @city, :comment => @comment %>   
-      </div>
-      <% if current_user == post.user %>
-        <%= render 'posts/footer', :post => post %>
-      <% end  %>
-    </div>
-  </div>
-</div>
-
-  <%# END MODAL %>
