@@ -21,7 +21,10 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     @comment = Comment.find(params[:id])
     @comment.destroy
-    redirect_to city_post_path(@city, @post)
+    respond_to do |f|
+      f.html{redirect_to city_post_path(@city, @post)}
+      f.js {}
+    end    
   end
 
   private

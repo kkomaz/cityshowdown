@@ -1,2 +1,2 @@
-$('#task-form-comments').prepend("<%= j render :partial => "comment", :locals => {:comment => @comment} %>");
+$("<%= j render :partial => "comment", :locals => {:comment => @comment} %>").prependTo('#task-form-comments').hide().slideDown();
 $('#comment_content').val("")
