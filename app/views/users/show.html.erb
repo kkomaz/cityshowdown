@@ -2,7 +2,17 @@
   <div class="col-sm-10">
     <h1><%= @user.nickname %></h1>
     <ul class="nav nav-pills">
-      <span class="label label-default">Current Rating: <span class="badge"><%= @user.total_points %></span> </span>
+      <span class="label label-default">
+        Current Rating: 
+        <span class="badge">
+        <% if @user.post_finder %>
+           <%= @user.total_points %>
+        </span>
+        <% else %>
+        <span class="badge">
+          0
+        </span>
+        <% end %>
     </ul>
   <br>
   </div>

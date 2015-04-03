@@ -22,21 +22,21 @@ cities = {
 cities.each {|city, image| City.create(name: city, image: image)}
 
 
-User.create(nickname: "Jack Johnson")
-User.create(nickname: "Jill Dorn")
-User.create(nickname: "Bob Marley")
+# User.create(nickname: "Jack Johnson")
+# User.create(nickname: "Jill Dorn")
+# User.create(nickname: "Bob Marley")
 
 categories = ['Food', 'Nightlife', 'Style', 'History', "Art", "Sports", 'Architecture', "Other"]
 categories.each {|category| Category.create(name: category)}
 
-Post.create(tagline: 'This city', description: "Is the best!", city_id: 1, user_id: 1, category_id: 1, pro_or_con: 1)
-Post.create(tagline: 'This city', description: "Is the worst!", city_id: 1, user_id: 2, category_id: 1, pro_or_con: 0)
-Post.create(tagline: 'No, MY city', description: "Is the best!", city_id: 2, user_id: 2, category_id: 2, pro_or_con: 1)
-Post.create(tagline: 'hate this city', description: "so much!", city_id: 2, user_id: 3, category_id: 2, pro_or_con: 0)
-Post.create(tagline: 'Nah guys', description: "mine is totally the best!", city_id: 3, user_id: 3, category_id: 3, pro_or_con: 1)
-Post.create(tagline: 'never going back here', description: "ever", city_id: 3, user_id: 1, category_id: 3, pro_or_con: 0)
+# Post.create(tagline: 'This city', description: "Is the best!", city_id: 1, user_id: 1, category_id: 1, pro_or_con: 1)
+# Post.create(tagline: 'This city', description: "Is the worst!", city_id: 1, user_id: 2, category_id: 1, pro_or_con: 0)
+# Post.create(tagline: 'No, MY city', description: "Is the best!", city_id: 2, user_id: 2, category_id: 2, pro_or_con: 1)
+# Post.create(tagline: 'hate this city', description: "so much!", city_id: 2, user_id: 3, category_id: 2, pro_or_con: 0)
+# Post.create(tagline: 'Nah guys', description: "mine is totally the best!", city_id: 3, user_id: 3, category_id: 3, pro_or_con: 1)
+# Post.create(tagline: 'never going back here', description: "ever", city_id: 3, user_id: 1, category_id: 3, pro_or_con: 0)
 
-Comment.create(content: "ok, whatever" , user_id: 1, post_id: 2)
-Comment.create(content: "ok, whatever" , user_id: 2, post_id: 3)
-Comment.create(content: "ok, whatever" , user_id: 3, post_id: 1)
+# Comment.create(content: "ok, whatever" , user_id: 1, post_id: 2)
+# Comment.create(content: "ok, whatever" , user_id: 2, post_id: 3)
+# Comment.create(content: "ok, whatever" , user_id: 3, post_id: 1)
 
