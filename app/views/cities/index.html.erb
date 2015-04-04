@@ -1,4 +1,10 @@
+<% if logged_in? %>
+<h1 class="center", id="headline"><b>Hello <%= current_user.nickname %>!</b></h1>
+<h4 class="center intro">Which city would you like to see?</h4>
+<br>
+<% else %>
 <h1 class="center", id="headline">Which city would you like to see?</h1><br>
+<% end %>
 
 <div class="container center">
 	<% @cities.all.each_slice(3).to_a.each do |slice| %>
