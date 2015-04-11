@@ -14,6 +14,7 @@ gem 'omniauth-instagram'
 gem 'figaro'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'kaminari', '~> 0.16.3'
+gem 'aws-sdk'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
