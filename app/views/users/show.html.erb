@@ -28,7 +28,7 @@
           <span class="pull-left">
             <strong class="">Real name</strong>
           </span> 
-            <% if @user.name == "" %>
+            <% if @user.name == "" || @user.name == nil %>
               no name given :(
             <% else %>
               <%= @user.name %>
@@ -38,7 +38,7 @@
           <span class="pull-left">
             <strong class="">Website</strong>
           </span> 
-            <% if @user.name == "" %>
+            <% if @user.name == "" || @user.website == nil %>
               no website given :(
             <% else %>
               <%= @user.website %>
