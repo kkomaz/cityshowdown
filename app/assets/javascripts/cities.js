@@ -22,6 +22,7 @@
 $(function(){
 	categoryListener();
 	closePostListener();
+	$("div.js-masonry").masonry({ "itemSelector": ".post", "gutter": 5, "isFitWidth": true });
 });
 
 function categoryListener(){
@@ -47,5 +48,5 @@ function closePostListener(){
 }
 
 function adjustMasonry(){
-	$("div.js-masonry").masonry();
+	$("div.js-masonry").masonry({ "itemSelector": ".post", "gutter": 5, "isFitWidth": true });
 }
