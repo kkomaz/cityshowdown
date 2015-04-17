@@ -1,7 +1,7 @@
 <div id="posts">
   <div class="col-md-6">
   <h3 class="center">YAY</h3>
-    <div class="js-masonry">
+    <div class="js-masonry" data-masonry-options='{ "itemSelector": ".post", "gutter": 5 }'>
       <% @posts.where(:posts => {:pro_or_con => 1}).each do |post| %>
         <%= render 'posts/post', :post => post %>
       <% end %>
@@ -10,7 +10,7 @@
 
   <div class="col-md-6">
   <h3 class="center">NAY</h3>
-    <div class="js-masonry">
+    <div class="js-masonry" data-masonry-options='{ "itemSelector": ".post" }'>
       <% @posts.where(:posts => {:pro_or_con => 0}).each do |post| %>
         <%= render 'posts/post', :post => post %>
       <% end %>
