@@ -21,6 +21,7 @@
 
 $(function(){
 	categoryListener();
+	closePostListener();
 });
 
 function categoryListener(){
@@ -39,4 +40,12 @@ function showCategory(e){
 
 	$(this).blur();
 	// $(this).addClass('selected');
+}
+
+function closePostListener(){
+	$('a.X').on("click, adjustMasonry");
+}
+
+function adjustMasonry(){
+	$("div.js-masonry").masonry();
 }
