@@ -11,7 +11,6 @@
 cities = { 
   "New York" => "http://img3.wikia.nocookie.net/__cb20131222172706/glee/images/thumb/c/c8/NY-skyline.jpg/800px-NY-skyline.jpg",
   "Seattle" => "http://www.usapics.net/wallpapers/2012/03/seattle-tower-washington--600x800.jpg",
-  "Chicago"=> "http://www.altergroup.com/blog/wp-content/uploads/2010/10/downtown-chicago.jpg",
   "Boston"=> "http://guide.trustedtours.com/wp-content/uploads/2012/08/800px-Public_Garden_Boston.jpg",
   "Austin"=> "https://farm6.staticflickr.com/5507/11455436595_a8a29323f9_c.jpg",
   "Los Angeles"=> "http://indianinkonline.com/wp-content/uploads/2014/11/palm-trees-800x600.jpg",
@@ -20,8 +19,7 @@ cities = {
   "Portland"=> "https://waldobungie.files.wordpress.com/2011/06/dsc_0189.jpg"
 }
 cities.each {|city, image| City.create(name: city, image: image)}
-
-
+  # "Chicago"=> "http://www.altergroup.com/blog/wp-content/uploads/2010/10/downtown-chicago.jpg",
 # User.create(nickname: "Jack Johnson")
 # User.create(nickname: "Jill Dorn")
 # User.create(nickname: "Bob Marley")

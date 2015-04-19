@@ -7,14 +7,21 @@
 <% end %>
 
 <div class="container center">
-	<% @cities.all.each_slice(3).to_a.each do |slice| %>
-		<div class="row">
-			<% slice.each do |city| %>
-				<div class="city col-md-4">
-					<p><%= link_to image_tag(city.image, width: "90%"), city %></p>
-					<h3 class="city_name"><%= link_to city.name, city %></h3>
-				</div>
-			<% end %>
+	<div id="wrapper">
+		<div id="content">
+			<div id="slider" class="span">
+				<% @cities.each.with_index do |city, index| %>
+					<div class="img image-<%= index+1 %>">
+					<%= link_to city.name, city, {:class => 'btn btn-success city_name', :style => "width: 50%"} %>
+					<%= link_to image_tag(city.image, width: "90%"), city %>
+					</div>
+				<% end %>
+				<div class="nav previous"></div>
+				<div class="nav next"></div>
+			</div>
+			<div id="dots">
+				<ul></ul>
+			</div>
 		</div>
-	<% end %>
+	</div>
 </div>
