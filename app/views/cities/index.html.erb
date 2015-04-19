@@ -12,7 +12,7 @@
 			<div id="slider" class="span">
 				<% @cities.each.with_index do |city, index| %>
 					<div class="img image-<%= index+1 %>">
-					<%= link_to city.name, city, {:class => 'btn btn-success city_name', :style => "width: 50%"} %>
+					<%= link_to city.name, city, {:class => 'btn btn-success city_name', :style => "width: 30%"} %>
 					<%= link_to image_tag(city.image, width: "90%"), city %>
 					</div>
 				<% end %>
