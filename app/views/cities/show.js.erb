@@ -1,2 +1,2 @@
 $("div#posts").replaceWith("<%= j render :partial => 'posts/posts' %>")
-$("div.js-masonry").masonry();
+$("div.js-masonry").masonry({ "itemSelector": ".post", "gutter": 5, "isFitWidth": true });

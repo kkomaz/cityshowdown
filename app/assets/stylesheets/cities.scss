@@ -6,11 +6,11 @@
 	text-align: center;
 }
 
-.becca1 {
+.custom-left {
 	float: left;
 }
 
-.becca2 {
+.custom-right {
 	float: right;
 }
 
@@ -157,6 +157,7 @@ h4.intro{
   color: grey;
 }
 
+
 .background-image {
 	background: url("nycblur.jpg") no-repeat center center fixed;
   background-size: cover;
@@ -170,5 +171,33 @@ h4.intro{
   z-index: -1;
 }
 
+/*INDIVIDUAL POSTS*/
+div.panel.panel-default.post {
+	width: 200px;
+	padding: 10px;
+	margin: 10px;
+}
 
+/*.right-div {
+	border-left: 1px solid black;
+}*/
+/*
+.left-div {
+	border-right: 1px solid black;
+}*/
 
+.row.vdivide [class*='col-']:not(:last-child):after {
+  background: #e0e0e0;
+  width: 1px;
+  content: "";
+  display:block;
+  position: absolute;
+  top: 24px;
+  bottom: 0;
+  right: 0;
+  /*min-height: 70px;*/
+}
+
+.posts-centered {
+  margin: 0 auto;
+}
