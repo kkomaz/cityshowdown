@@ -1,26 +1,28 @@
-<% if logged_in? %>
-<h1 class="center", id="headline"><b>Hello <%= current_user.nickname %>!</b></h1>
-<h4 class="center intro">Which city would you like to see?</h4>
-<br>
-<% else %>
-<h1 class="center", id="headline">Which city would you like to see?</h1><br>
-<% end %>
+<div class="background-image">
+	<% if logged_in? %>
+	<h1 class="center", id="headline"><b>Hello <%= current_user.nickname %>!</b></h1>
+	<h4 class="center intro">Which city would you like to see?</h4>
+	<br>
+	<% else %>
+	<h1 class="center", id="headline">Which city would you like to see?</h1><br>
+	<% end %>
 
-<div class="container center">
-	<div id="wrapper">
-		<div id="content">
-			<div id="slider">
-				<% @cities.each.with_index do |city, index| %>
-					<div class="img image-<%= index+1 %> city-image">
-					<%= link_to city.name, city, {:class => 'btn btn-success city_name', :style => "width: 30%"} %>
-							<%= link_to image_tag(city.image), city %>
-					</div>
-				<% end %>
-				<div class="nav previous"></div>
-				<div class="nav next"></div>
-			</div>
-			<div id="dots">
-				<ul></ul>
+	<div class="container center">
+		<div id="wrapper">
+			<div id="content">
+				<div id="slider">
+					<% @cities.each.with_index do |city, index| %>
+						<div class="img image-<%= index+1 %> city-image">
+						<%= link_to city.name, city, {:class => 'btn btn-success city_name', :style => "width: 30%"} %>
+								<%= link_to image_tag(city.image), city %>
+						</div>
+					<% end %>
+					<div class="nav previous"></div>
+					<div class="nav next"></div>
+				</div>
+				<div id="dots" style="margin-right: 50px;">
+					<ul></ul>
+				</div>
 			</div>
 		</div>
 	</div>

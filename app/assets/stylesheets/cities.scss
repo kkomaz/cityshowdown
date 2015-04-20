@@ -111,6 +111,10 @@ a.X:hover {
 	padding: 25px;
 }
 
+.categories {
+  font-size: 17px;
+}
+
 .subnav {
 	background: rgb(248, 248, 248);
 }
@@ -153,9 +157,8 @@ h4.intro{
   color: grey;
 }
 
-.newyork-background-image {
-	background: url("NY-skyline.jpg") no-repeat center center fixed;
-	/*background-color: #d3d3d3;*/
+.background-image {
+	background: url("nycblur.jpg") no-repeat center center fixed;
   background-size: cover;
   background-repeat: no-repeat;
   position: fixed;
@@ -165,7 +168,6 @@ h4.intro{
   height: 100%;
   width: 100%;
   z-index: -1;
-  opacity: .6;
 }
 
 
