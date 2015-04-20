@@ -101,7 +101,7 @@ a.X:hover {
 	padding-right: 10px;
 	text-align: center;
 	/*background-color: #428bca;*/
-	background-color: #B3D1EA;
+	background-color: #18bc9c;
 }
 
 .city-name {
@@ -113,6 +113,12 @@ a.X:hover {
 
 .categories {
   font-size: 17px;
+}
+
+.blue-background{
+  padding: 5px;
+  background-color: #2c3e50;
+  border-radius: 5px;
 }
 
 .subnav {
@@ -200,4 +206,8 @@ div.panel.panel-default.post {
 
 .posts-centered {
   margin: 0 auto;
+}
+
+.white-text {
+	color: #FFFFFF;
 }

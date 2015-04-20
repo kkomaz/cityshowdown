@@ -1,4 +1,4 @@
-<%= link_to 'Back to Cities', root_path %>
+<%= link_to 'Back to Cities', root_path, :class => 'white-text' %>
 
 <div class="background-image"></div>
 
@@ -8,7 +8,7 @@
 	<div class="col-md-8 center">
 		<h1 class="city-name"><%= @city.name.upcase %></h1>
 
-		<div class='categories'>&#8226 <%= link_to "ALL", city_path(@city) %>
+		<div class='categories blue-background'>&#8226 <%= link_to "ALL", city_path(@city) %>
 		&#8226<% @categories.each do |c| %>
 			<%= link_to c.name.upcase, city_category_path(@city, c) %> &#8226
 		<% end %>
@@ -16,7 +16,7 @@
 
 		<div class="center">
 			<% if logged_in? %>
-			  <br><%= link_to 'New post', new_city_post_path(@city), :class => "btn btn-info" %>
+			  <br><%= link_to 'New post', new_city_post_path(@city), :class => "btn btn-success" %>
 			<% end %>
 		</div>
 
