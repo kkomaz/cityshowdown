@@ -5,7 +5,7 @@ var slider = function() {
   var delay = 5000;
 
   // Set variables
-  var numImages = $('.img').length;
+  var numImages = $('.city-image img').length;
   var previousImage = numImages;
   var currentImage = 1;
   var nextImage = 2;
@@ -15,7 +15,7 @@ var slider = function() {
 
   // Give images same width as slider
   var sizeImages = function() {
-    $("img").width(sliderWidth);
+    $(".city-image img").width(sliderWidth);
   };
   sizeImages();
 
@@ -109,7 +109,8 @@ var slider = function() {
 
   // When a navigation dot is clicked
   $('.dot').click(function() {
-    buttonPressed = $('li').index(this) + 1;
+    dotList = $('#dots').children().children();
+    buttonPressed = dotList.index(this) + 1;
     //finds the index wrapped by the li (starts at 0 thus the + 1)
     if(buttonPressed !== currentImage) {
       clearInterval(moveImages);
@@ -129,8 +130,6 @@ var slider = function() {
   });
 };
 
-$(document).ready(function() {
-
+$(function() {
   slider();
-
 });

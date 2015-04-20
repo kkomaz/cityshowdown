@@ -9,11 +9,11 @@
 <div class="container center">
 	<div id="wrapper">
 		<div id="content">
-			<div id="slider" class="span">
+			<div id="slider">
 				<% @cities.each.with_index do |city, index| %>
-					<div class="img image-<%= index+1 %>">
+					<div class="img image-<%= index+1 %> city-image">
 					<%= link_to city.name, city, {:class => 'btn btn-success city_name', :style => "width: 30%"} %>
-					<%= link_to image_tag(city.image, width: "90%"), city %>
+							<%= link_to image_tag(city.image), city %>
 					</div>
 				<% end %>
 				<div class="nav previous"></div>
