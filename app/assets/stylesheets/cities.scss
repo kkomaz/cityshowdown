@@ -145,7 +145,7 @@ h4.intro{
 }
 
 .newyork-background-image {
-	/*background: url("NY-skyline.jpg") no-repeat center center fixed;*/
+	background: url("NY-skyline.jpg") no-repeat center center fixed;
 	/*background-color: #d3d3d3;*/
   background-size: cover;
   background-repeat: no-repeat;
@@ -156,6 +156,7 @@ h4.intro{
   height: 100%;
   width: 100%;
   z-index: -1;
+  opacity: .6;
 }
 
 
