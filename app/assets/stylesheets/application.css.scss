@@ -26,6 +26,7 @@
 body {
   padding-top: 70px;
   padding-bottom: 30px;
+  /*margin-bottom: 50px;*/
 }
 
 .theme-dropdown .dropdown-menu {
@@ -47,6 +48,15 @@ body {
   display: block;
   background-color: transparent;
   text-align: -webkit-match-parent;
+}
+
+.panel-footer {
+  height: 50px;
+  text-align: center;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  margin-bottom: 0px;
 }
 
 
