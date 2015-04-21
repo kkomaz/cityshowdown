@@ -19,8 +19,21 @@
 // 	$.ajax()
 // }
 
+// var container = document.querySelector('div.js-masonry');
+// var msnry = new Masonry( container, {
+//   // options
+//   itemSelector: '.post',
+//   gutter: 5,
+//   isFitWidth: true
+// });
+
 $(function(){
+	setTimeout(function () {
+		$("div.js-masonry").masonry({ "itemSelector": ".post", "gutter": 5, "isFitWidth": true });
+  }, 100);
+
 	categoryListener();
+	closePostListener();
 });
 
 function categoryListener(){
@@ -39,4 +52,12 @@ function showCategory(e){
 
 	$(this).blur();
 	// $(this).addClass('selected');
+}
+
+function closePostListener(){
+	$('a.X').on("click, adjustMasonry");
+}
+
+function adjustMasonry(){
+	$("div.js-masonry").masonry({ "itemSelector": ".post", "gutter": 5, "isFitWidth": true });
 }

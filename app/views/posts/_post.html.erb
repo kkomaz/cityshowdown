@@ -1,7 +1,7 @@
-<div class="panel panel-default col-md-5 post">
-  <p class="becca1 subtext"><%= "Category: " + post.category.name if post.category %></p>
+<div class="panel panel-default post">
+  <p class="custom-left subtext"><%= "Category: " + post.category.name if post.category %></p>
   
-  <p class="becca2 subtext"><%= link_to "Expand", city_post_path(@city, post) %></p>
+  <p class="custom-right subtext"><%= link_to "Expand", city_post_path(@city, post) %></p>
 
   <div class="panel-body">
     <%= image_check(post) %> 
