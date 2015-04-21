@@ -101,7 +101,7 @@ a.X:hover {
 	padding-right: 10px;
 	text-align: center;
 	/*background-color: #428bca;*/
-	background-color: #B3D1EA;
+	background-color: rgb(24, 188, 156);
 }
 
 .city-name {
@@ -113,6 +113,18 @@ a.X:hover {
 
 .categories {
   font-size: 17px;
+}
+
+div.categories > a {
+	color: #FFF;
+}
+
+.blue-background{
+  padding: 5px;
+  /*background-color: rgba(44, 62, 80, .6);*/
+  background-color: rgba(44, 62, 80, .35);
+	color: #FFF;
+  border-radius: 5px;
 }
 
 .subnav {
@@ -213,4 +225,8 @@ div.panel.panel-default.post {
 
 .posts-centered {
   margin: 0 auto;
+}
+
+.white-text {
+	color: #FFFFFF;
 }
